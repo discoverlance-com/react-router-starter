@@ -11,3 +11,8 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+vite.config.timestamp-*
+
+.env
+.env.local
+.env.development

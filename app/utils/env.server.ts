@@ -6,6 +6,7 @@ export const env = createEnv({
     NODE_ENV: z.enum(["production", "development", "test"] as const),
     HONEYPOT_SECRET: z.string().default("Sup3rS3cr3tH0n3yP0T"),
     SESSION_SECRET: z.string().default('Sup3rS3cr3tC00ki3'),
+    ALLOW_INDEXING: z.enum(['true', 'false']).optional(),
     USE_SECURE_COOKIES: z
       .string()
       // only allow "true" or "false"
@@ -61,8 +62,10 @@ export const env = createEnv({
  * be included in the client.
  * @returns all public ENV variables
  */
-export function getEnv(): Record<string, string> {
-  return {};
+export function getEnv() {
+  return {
+    ALLOW_INDEXING: process.env.ALLOW_INDEXING,
+  };
 }
 
 type ENV = ReturnType<typeof getEnv>;

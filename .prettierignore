@@ -1,0 +1,7 @@
+node_modules
+
+app/components/ui
+build
+dist
+.react-router
+public/

@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
@@ -16,15 +15,5 @@ export default defineConfig({
       port: 24678,
     },
     cors: true,
-  },
-  test: {
-    include: ["./app/**/*.test.{ts,tsx}"],
-    setupFiles: ["./tests/setup/setup-test-env.ts"],
-    globalSetup: ["./tests/setup/global-setup.ts"],
-    restoreMocks: true,
-    coverage: {
-      include: ["app/**/*.{ts,tsx}"],
-      all: true,
-    },
   },
 });

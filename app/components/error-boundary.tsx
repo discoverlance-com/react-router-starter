@@ -1,9 +1,3 @@
-import {
-	BanIcon,
-	ScanSearchIcon,
-	ServerCrashIcon,
-	ShieldAlertIcon,
-} from 'lucide-react'
 import { type ReactElement } from 'react'
 import {
 	type ErrorResponse,

@@ -13,6 +13,8 @@ import { HoneypotProvider } from 'remix-utils/honeypot/react'
 import type { Route } from './+types/root'
 import './app.css'
 import { EpicProgressBar } from './components/epic-progress-bar'
+import { GeneralErrorBoundary } from './components/error-boundary'
+import { Toaster } from './components/ui/sonner'
 import { useToast } from './hooks/use-toast'
 import { getToast } from './lib/cookies/toast.server'
 import { useOptionalTheme } from './routes/resources.theme-switch/theme-switcher'
@@ -99,14 +101,10 @@ function Document({
 	children: React.ReactNode
 	env?: Record<string, string>
 }) {
-	const allowIndexing = ENV.ALLOW_INDEXING !== 'false'
+	const allowIndexing = env.ALLOW_INDEXING !== 'false'
 
 	return (
-		<html
-			lang="en"
-			// className={`${theme}`}
-			suppressHydrationWarning
-		>
+		<html lang="en" className={`${theme}`} suppressHydrationWarning>
 			<head>
 				<meta charSet="utf-8" />
 				<meta
@@ -137,6 +135,12 @@ function Document({
 				/>
 				<ScrollRestoration nonce={nonce} />
 				<Scripts nonce={nonce} />
+				<Toaster
+					closeButton
+					duration={4000}
+					position="top-right"
+					theme={theme}
+				/>
 			</body>
 		</html>
 	)
@@ -158,4 +162,4 @@ export default function AppWithProviders() {
 	)
 }
 
-// export const ErrorBoundary = GeneralErrorBoundary
+export const ErrorBoundary = GeneralErrorBoundary

@@ -1,3 +1,3 @@
 export async function setup() {
-  // TODO: any global setups like resources here
+	// TODO: any global setups like resources here
 }

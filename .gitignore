@@ -4,6 +4,7 @@
 # React Router
 /.react-router/
 /build/
+/server-build/
 
 # Playwright
 node_modules/

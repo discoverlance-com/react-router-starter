@@ -1,6 +1,7 @@
+import 'vitest-browser-react'
+
 import * as setCookieParser from 'set-cookie-parser'
 import { expect } from 'vitest'
-import 'vitest-browser-react'
 
 import {
 	type ToastInput,

@@ -19,7 +19,5 @@ test('can view resource links', async ({ page }) => {
 	await expect(page.getByRole('link', { name: 'Join Discord' })).toBeVisible()
 
 	// Expects page to have a paragraph with the text of What's next?
-	await expect(
-		page.getByRole('paragraph', { name: "What's next?" }),
-	).toBeVisible()
+	await expect(page.getByText("What's next?")).toBeVisible()
 })

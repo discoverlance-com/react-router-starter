@@ -1,13 +1,9 @@
-import 'vitest-browser-react'
-
+import '@testing-library/jest-dom/vitest'
 import * as setCookieParser from 'set-cookie-parser'
 import { expect } from 'vitest'
 
-import {
-	type ToastInput,
-	toastKey,
-	toastSessionStorage,
-} from '@/lib/cookies/toast.server'
+import { type ToastInput } from '@/lib/cookies/cookies-schema'
+import { toastKey, toastSessionStorage } from '@/lib/cookies/toast.server'
 import { convertSetCookieToCookie } from '@/tests/utils'
 
 expect.extend({

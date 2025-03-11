@@ -48,6 +48,7 @@ export const env = createEnv({
 		console.error('❌ Invalid environment variables:', error)
 		throw new Error('Invalid environment variables')
 	},
+	skipValidation: process.env.NODE_ENV === 'test',
 })
 
 /**

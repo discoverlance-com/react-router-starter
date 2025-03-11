@@ -1,18 +1,26 @@
-# Welcome to React Router!
+# Welcome to React Router Starter
 
-A modern, production-ready template for building full-stack React applications using React Router.
+React router is a modern, production-ready template for building full-stack
+React applications using React Router.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+This is a template that builds upon react router and provides some tooling such
+as styling, csp, custom node server, shadcn ui and testing.
+
+This is of course bare bones but gives you enough to get started with your
+project. Changes and suggestions for improvement are welcome. If you have any
+issues or suggestions, please create an issue on the github repository.
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/discoverlance-com/react-router-starter/tree/main/default)
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Content Security Policy
+- Styling with Tailwind and Shadcn ui
+- Default Error Boundary with Splat Route Customisation
+- Unit and Component Testing with Vitest
+- Playwright for End to End Testing
+- API Mocking with MSW - for testing
+- Prettier for formatting components
 
 ## Getting Started
 
@@ -21,36 +29,35 @@ A modern, production-ready template for building full-stack React applications u
 Install the dependencies:
 
 ```bash
-npm install
+yarn
 ```
 
 ### Development
 
-Start the development server with HMR:
+Start the development server with HMR, Mock Server:
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Your application will be available at `http://localhost:3000`.
 
 ## Building for Production
 
 Create a production build:
 
 ```bash
-npm run build
+yarn run build
 ```
 
 ## Deployment
 
 ### Docker Deployment
 
-This template includes three Dockerfiles optimized for different package managers:
+This template includes three Dockerfiles optimized for different package
+managers:
 
-- `Dockerfile` - for npm
-- `Dockerfile.pnpm` - for pnpm
-- `Dockerfile.bun` - for bun
+- `Dockerfile`
 
 To build and run using Docker:
 
@@ -58,17 +65,12 @@ To build and run using Docker:
 # For npm
 docker build -t my-app .
 
-# For pnpm
-docker build -f Dockerfile.pnpm -t my-app .
-
-# For bun
-docker build -f Dockerfile.bun -t my-app .
-
 # Run the container
 docker run -p 3000:3000 my-app
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+The containerized application can be deployed to any platform that supports
+Docker, including:
 
 - AWS ECS
 - Google Cloud Run
@@ -77,24 +79,13 @@ The containerized application can be deployed to any platform that supports Dock
 - Fly.io
 - Railway
 
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
 ---
 
 Built with ❤️ using React Router.
+
+## Acknowledgements
+
+1. [Epic Stack](https://github.com/epicweb-dev/epic-stack) - The primary pieces
+   including client hints, honeypot, custom node server were inspired by this
+   project. If you want a full experience with database setup, authentication
+   and much more with react router, I encourage you to check out this project.
